@@ -39,8 +39,13 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#sampleMenuModal">Sample Menu</a></li>
           <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#startPlanningModal">Start Planning</a></li>
-          <li class="nav-item"><a class="btn btn-light ms-2" data-bs-toggle="modal" data-bs-target="#authModal" id="">Sign Up</a></li>
-          <li class="nav-item"><a class="btn btn-outline-light ms-2" data-bs-toggle="modal" data-bs-target="#authModal">Login</a></li>
+          <li class="nav-item">
+            <a class="btn btn-light ms-2" data-bs-toggle="modal" data-bs-target="#authModal" id="open-signup">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-light ms-2" data-bs-toggle="modal" data-bs-target="#authModal" id="open-login">Login</a>
+          </li>
+          
         </ul>
       </div>
     </div>
@@ -215,6 +220,16 @@
         form.classList.add('was-validated');
       });
     });
+    document.getElementById('open-signup').addEventListener('click', () => {
+  // Show signup tab
+  document.querySelector('#authTabs button[data-bs-target="#signup"]').click();
+});
+
+document.getElementById('open-login').addEventListener('click', () => {
+  // Show login tab
+  document.querySelector('#authTabs button[data-bs-target="#login"]').click();
+});
+
   </script>
 </body>
 </html>
